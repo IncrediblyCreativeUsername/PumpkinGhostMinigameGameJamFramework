@@ -101,7 +101,11 @@ namespace PumpkinGhost {
                 return;
             }
 
-            _rigidbody.velocity = (gravity * Time.deltaTime * Vector3.up) + (((float) Math.Pow(friction, Time.deltaTime + 1)) * (_rigidbody.velocity + new Vector3(_moveInput.x * speed, 0, _moveInput.y * speed)));
+            float modifiedSpeed = speed;
+            if (pumpkinSize > 0) {
+                modifiedSpeed *= 1 / pumpkinSize;
+            }
+            _rigidbody.velocity = (gravity * Time.deltaTime * Vector3.up) + (((float) Math.Pow(friction, Time.deltaTime + 1)) * (_rigidbody.velocity + new Vector3(_moveInput.x * modifiedSpeed, 0, _moveInput.y * modifiedSpeed)));
             
             if (_rigidbody.velocity.magnitude < 0.7) {
                 _rigidbody.velocity = new Vector3(0, _rigidbody.velocity.y, 0);
