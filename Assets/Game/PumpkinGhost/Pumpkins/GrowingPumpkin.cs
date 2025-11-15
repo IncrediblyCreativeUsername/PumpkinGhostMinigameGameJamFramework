@@ -10,7 +10,7 @@ public class GrowingPumpkin : MonoBehaviour
     public float maxSize;
     public float minSize;
     public float growRate;
-    private float size = 1.0f;
+    public float size = 1.0f;
     public GameObject unripe;
     public GameObject ripe;
 

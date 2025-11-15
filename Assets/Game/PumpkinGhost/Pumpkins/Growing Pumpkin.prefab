@@ -69,8 +69,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSize: 3
-  minSize: 1.5
-  growRate: 0.1
+  minSize: 1
+  growRate: 0.15
+  size: 0.6
   unripe: {fileID: 6376818217841327650}
   ripe: {fileID: 2927311250995860946}
 --- !u!1001 &2620690102377113731
