@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2392102391173514877}
   - component: {fileID: 7581237879061406093}
   - component: {fileID: 8775820172062194946}
+  - component: {fileID: 3325414211038842246}
   m_Layer: 0
   m_Name: Thrown Pumpkin
   m_TagString: Untagged
@@ -26,9 +27,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4341029093781169405}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0.030496012, y: 0.92094445, z: -0.07357523, w: -0.38146842}
+  m_LocalPosition: {x: -10.975356, y: 0.36999977, z: 8.641821}
+  m_LocalScale: {x: 1.2576478, y: 1.2576478, z: 1.2576478}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2652239341075407407}
@@ -82,6 +83,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &3325414211038842246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4341029093781169405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4648d33aa20aba49ba5cd4e9d4ef0dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 200
 --- !u!1001 &2541187827784271300
 PrefabInstance:
   m_ObjectHideFlags: 0

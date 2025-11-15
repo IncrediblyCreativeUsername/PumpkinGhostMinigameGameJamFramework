@@ -11,13 +11,13 @@ public class ThrownPumpkin : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GetComponent<Rigidbody>().velocity = transform.forward * speed;
+        GetComponent<Rigidbody>().AddForce(transform.forward * speed, ForceMode.Force);
     }
 
     // Update is called once per frame
     void Update()
     {
-        //GetComponent<Rigidbody>().Move();
+        
     }
 
     private void OnTriggerEnter(Collider other)
