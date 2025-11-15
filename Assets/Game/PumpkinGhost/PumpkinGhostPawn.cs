@@ -25,6 +25,7 @@ namespace PumpkinGhost {
         public float rotation = 180;
 
         public GameObject pumpkin;
+        public GameObject thrownPumpkin;
         public float pumpkinSize = 0.0f;
 
         // The pumpkin which this player can pickup (if any)
@@ -63,6 +64,13 @@ namespace PumpkinGhost {
                 {
                      _audio.PlayOneShot(sound_pumpkinThrow);
                     pumpkin.SetActive(false);
+
+                    // Create thrown projectile
+                    thrownPumpkin.transform.position = transform.position;
+                    thrownPumpkin.transform.rotation = transform.rotation;
+                    thrownPumpkin.transform.localScale = new Vector3(pumpkinSize, pumpkinSize, pumpkinSize);
+                    Instantiate(thrownPumpkin);
+
                     pumpkinSize = 0.0f;
                 }
                 else
