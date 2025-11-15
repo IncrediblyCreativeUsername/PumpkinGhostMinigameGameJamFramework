@@ -26,7 +26,7 @@ namespace PumpkinGhost {
         public float rotation = 180;
 
         public GameObject pumpkin;
-        public GameObject thrownPumpkin;
+        public ThrownPumpkin thrownPumpkin;
         public float pumpkinSize = 0.0f;
 
         // The pumpkin which this player can pickup (if any)
@@ -73,6 +73,7 @@ namespace PumpkinGhost {
                     thrownPumpkin.transform.position = transform.position + (1.45f * transform.forward);
                     thrownPumpkin.transform.rotation = transform.rotation;
                     thrownPumpkin.transform.localScale = new Vector3(pumpkinSize, pumpkinSize, pumpkinSize);
+                    thrownPumpkin.playerNum = playerNum;
                     Instantiate(thrownPumpkin);
 
                     pumpkinSize = 0.0f;
