@@ -166,10 +166,10 @@ SphereCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 1081344
+    m_Bits: 1082368
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 3252714495
   m_LayerOverridePriority: 1
   m_IsTrigger: 0
   m_ProvidesContacts: 0
@@ -710,7 +710,7 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1083328
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1414,7 +1414,7 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1083328
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1582,7 +1582,7 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1083328
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1768,10 +1768,10 @@ SphereCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 1081344
+    m_Bits: 1082368
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 3252714495
   m_LayerOverridePriority: 1
   m_IsTrigger: 0
   m_ProvidesContacts: 0
@@ -2359,7 +2359,7 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1083328
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -2531,10 +2531,10 @@ SphereCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 1081344
+    m_Bits: 1082368
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 3252714495
   m_LayerOverridePriority: 1
   m_IsTrigger: 0
   m_ProvidesContacts: 0
@@ -2741,12 +2741,12 @@ SphereCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 1081344
+    m_Bits: 1082368
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 3252714495
   m_LayerOverridePriority: 1
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -3039,7 +3039,7 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1083328
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
