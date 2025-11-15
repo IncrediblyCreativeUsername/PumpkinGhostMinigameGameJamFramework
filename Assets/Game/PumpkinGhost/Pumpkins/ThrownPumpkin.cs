@@ -7,17 +7,19 @@ public class ThrownPumpkin : MonoBehaviour
 {
 
     public float speed;
+    public GameObject model;
 
     // Start is called before the first frame update
     void Start()
     {
+        transform.rotation.Set(0, transform.rotation.y, 0, transform.rotation.w);
         GetComponent<Rigidbody>().AddForce(transform.forward * speed, ForceMode.Force);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        model.transform.Rotate(0, speed * Time.deltaTime, 0);
     }
 
     private void OnTriggerEnter(Collider other)
