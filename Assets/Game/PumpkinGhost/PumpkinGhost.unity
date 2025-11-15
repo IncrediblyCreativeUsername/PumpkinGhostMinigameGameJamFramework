@@ -933,6 +933,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerIndex: -1
+  playerNum: 4
   speed: 0.5
   gravity: -80
   friction: 0.9
@@ -1089,6 +1090,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerIndex: -1
+  playerNum: 2
   speed: 0.5
   gravity: -80
   friction: 0.9
@@ -1363,6 +1365,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerIndex: -1
+  playerNum: 1
   speed: 0.5
   gravity: -80
   friction: 0.9
@@ -2307,6 +2310,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerIndex: -1
+  playerNum: 3
   speed: 0.5
   gravity: -80
   friction: 0.9

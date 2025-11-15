@@ -28,7 +28,7 @@ namespace PumpkinGhost
             int count = 0;
 
             foreach (GameObject player in players) {
-                if (player.transform.position.y > 0) {
+                if (player.activeSelf) {
                     count++;
                     x += player.transform.position.x;
                     z += player.transform.position.z;

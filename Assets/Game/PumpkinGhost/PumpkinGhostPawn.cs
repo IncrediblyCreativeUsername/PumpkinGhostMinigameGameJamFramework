@@ -1,5 +1,7 @@
 using System;
+using System.Diagnostics;
 using Game.MinigameFramework.Scripts.Framework.Input;
+using Game.MinigameFramework.Scripts.Framework.PlayerInfo;
 using Game.MinigameFramework.Scripts.Tags;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -8,6 +10,7 @@ using UnityEngine.InputSystem;
 namespace PumpkinGhost {
     [RequireComponent(typeof(Rigidbody))]
     public class PumpkinGhostPawn : Pawn {
+        [SerializeField] private int playerNum;
         [SerializeField] private float speed = 0.25f;
         [SerializeField] private float gravity = -80f;
         [SerializeField] private float friction = 0.98f;
@@ -28,6 +31,10 @@ namespace PumpkinGhost {
             GetComponent<Rigidbody>().useGravity = false;
         }
         private void Awake() {
+            if (playerNum > 1 && playerNum > PlayerManager.GetNumPlayers()) {
+                gameObject.SetActive(false);
+            }
+
             _rigidbody = GetComponent<Rigidbody>();
         }
         
