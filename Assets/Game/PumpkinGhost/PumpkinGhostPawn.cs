@@ -7,18 +7,14 @@ using UnityEngine.InputSystem;
 namespace PumpkinGhost {
     [RequireComponent(typeof(Rigidbody))]
     public class PumpkinGhostPawn : Pawn {
-        [Header("Movement")]
-        [SerializeField] private float speed = 8f;
-        [SerializeField] private float gravity = -50f;
-        private Vector2 _moveInput = Vector2.zero;
+        [SerializeField] private float speed = 0.25f;
+        [SerializeField] private float gravity = -80f;
+        [SerializeField] private float friction = 0.98f;
+        
         private Rigidbody _rigidbody;
         public static bool isPawnInputEnabled = true;
-        [Header("Snow Accumulation")]
-        [SerializeField] private float distanceToSnow = 0.1f;
-        [SerializeField] private AnimationCurve snowSizeCurve;
-        [SerializeField] private AnimationCurve snowMassCurve;
-        private float _distanceTraveled = 0;
-        private float _snowTotal=0;
+        private Vector2 _moveInput = Vector2.zero;
+        public float rotation = 180;
 
         // Disable Unity's default gravity when this component is added
         private void Reset() {
@@ -33,38 +29,27 @@ namespace PumpkinGhost {
             if (!isPawnInputEnabled) return;
             
             // Move
-            if (context.action.name == PawnAction.Move) _moveInput = context.ReadValue<Vector2>();
+            if (context.action.name == PawnAction.Move) {
+                _moveInput = context.ReadValue<Vector2>();
+                if (_moveInput.magnitude > 0.1) {
+                    rotation = Vector2.Angle(Vector2.up, _moveInput) * (_moveInput.x < 0 ? -1 : 1);
+                }
+            }
         }
         
         private void Update() {
-            // Gravity
-            _rigidbody.velocity += gravity * Time.deltaTime * Vector3.up;
-            // Movement
-            _rigidbody.angularVelocity += new Vector3(_moveInput.y * speed * Time.deltaTime, 0, -_moveInput.x * speed * Time.deltaTime);
-            
-            UpdateSnowAccumulation();
-        }
+            if (!isPawnInputEnabled) {
+                _rigidbody.velocity = Vector3.zero;
+                _rigidbody.angularVelocity = Vector3.zero;
+                return;
+            }
 
-        #region Snow Accumulation
-            private void UpdateSnowAccumulation() {
-                float dot = Vector3.Dot(_rigidbody.velocity, _moveInput);
-                if(dot > 0) { // if the player's velocity in the same direction of their move input
-                    _distanceTraveled += Vector3.Dot(_rigidbody.velocity, _moveInput) * Time.deltaTime;
-                    if(_distanceTraveled > 0.1f) {
-                        IncreaseSnow(_distanceTraveled * distanceToSnow);
-                        _distanceTraveled = 0;
-                    }
-                }
+            _rigidbody.velocity = (gravity * Time.deltaTime * Vector3.up) + (_rigidbody.velocity + new Vector3(_moveInput.x * speed, 0, _moveInput.y * speed)) * Mathf.Pow(friction, Time.deltaTime + 1);
+            if (_rigidbody.velocity.magnitude < 0.7) {
+                _rigidbody.velocity = new Vector3(0, _rigidbody.velocity.y, 0);
             }
-            private void IncreaseSnow(float snow) {
-                SetSnowTotal(_snowTotal + snow);
-            }
-            private void SetSnowTotal(float snow) {
-                _snowTotal = snow;
-                float scale = snowSizeCurve.Evaluate(_snowTotal);
-                transform.localScale = new Vector3(scale, scale, scale);
-                _rigidbody.mass = snowMassCurve.Evaluate(_snowTotal);
-            }
-        #endregion
+
+            transform.eulerAngles = new Vector3(0, Mathf.LerpAngle(transform.eulerAngles.y, rotation, 0.1f), 0);
+        }
     }
 }
