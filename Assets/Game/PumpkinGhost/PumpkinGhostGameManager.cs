@@ -18,8 +18,13 @@ namespace PumpkinGhost {
         [Header("UI")]
         [SerializeField] private GameObject readyText;
         
+        //SOUND
+        [SerializeField] private AudioClip sound_music;
+        private AudioSource _audio;
+        
 
         private void Start() {
+            _audio = GetComponent<AudioSource>();
             _ranking.SetAllPlayersToRank(1); // set all players to first place
             StartCoroutine(GameTimer());
         }
@@ -30,6 +35,7 @@ namespace PumpkinGhost {
             yield return new WaitForSeconds(1);
             readyText.SetActive(false);
             PumpkinGhostPawn.isPawnInputEnabled = true;
+            _audio.PlayOneShot(sound_music);
             // Timer
             while (timer < duration) {
                 timer += Time.deltaTime;
