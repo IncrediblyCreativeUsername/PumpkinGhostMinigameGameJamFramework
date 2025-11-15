@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
+using PumpkinGhost;
 
 public class GrowingPumpkin : MonoBehaviour
 {
@@ -30,18 +31,43 @@ public class GrowingPumpkin : MonoBehaviour
 
             // Set scale to factor by size
             transform.localScale = new Vector3(size, size, size);
-
         }
     }
 
     // Collision detection for the trigger
     private void OnTriggerEnter(Collider other)
     {
+        // Check if colliding with a player
+        if (other.gameObject.CompareTag("Player"))
+        {
+            PumpkinGhost.PumpkinGhostPawn player = other.gameObject.GetComponent<PumpkinGhost.PumpkinGhostPawn>();
+            player.pumpkinPickup = this;
+        }
+    }
 
+    // Player exiting
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            PumpkinGhost.PumpkinGhostPawn player = other.gameObject.GetComponent<PumpkinGhost.PumpkinGhostPawn>();
+
+            if (player.pumpkinPickup == this)
+            {
+                player.pumpkinPickup = null;
+            }
+            
+        }
     }
 
     // Returns the size of the pumpkin
     public float GetSize() {
         return size;
+    }
+
+    public void Delete()
+    {
+        gameObject.SetActive(false);
+        Destroy(this);
     }
 }

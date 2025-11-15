@@ -18,7 +18,10 @@ namespace PumpkinGhost {
         public float rotation = 180;
 
         public GameObject pumpkin;
-        public float pumpkinSize;
+        public float pumpkinSize = 0.0f;
+
+        // The pumpkin which this player can pickup (if any)
+        public GrowingPumpkin pumpkinPickup = null;
 
         // Disable Unity's default gravity when this component is added
         private void Reset() {
@@ -39,6 +42,30 @@ namespace PumpkinGhost {
                     rotation = Vector2.Angle(Vector2.up, _moveInput) * (_moveInput.x < 0 ? -1 : 1);
                 }
             }
+
+            // A button
+            if (context.action.name == PawnAction.ButtonA)
+            {
+                // Throwing
+                if (pumpkinSize > 0)
+                {
+                    pumpkin.SetActive(false);
+                    pumpkinSize = 0.0f;
+                }
+                else
+                {
+                    // Pickup code
+                    if (pumpkinPickup != null)
+                    {
+                        pumpkinSize = pumpkinPickup.GetSize();
+                        pumpkin.transform.localScale = new Vector3(pumpkinSize, pumpkinSize, pumpkinSize);
+                        pumpkin.transform.position.Set(0, 0, 0.45f + (0.5f * pumpkinSize));
+                        pumpkin.SetActive(true);
+                        pumpkinPickup.Delete();
+                        pumpkinPickup = null;
+                    }
+                }
+            }
         }
         
         private void Update() {
@@ -56,5 +83,11 @@ namespace PumpkinGhost {
 
             transform.eulerAngles = new Vector3(0, Mathf.LerpAngle(transform.eulerAngles.y, rotation, 0.1f), 0);
         }
+
+        public static explicit operator PumpkinGhostPawn(GameObject v)
+        {
+            throw new NotImplementedException();
+        }
+
     }
 }

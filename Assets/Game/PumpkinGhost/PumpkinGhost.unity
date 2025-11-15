@@ -140,7 +140,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &93603405
 Transform:
   m_ObjectHideFlags: 0
@@ -939,6 +939,7 @@ MonoBehaviour:
   rotation: 180
   pumpkin: {fileID: 1817358457}
   pumpkinSize: 0
+  pumpkinPickup: {fileID: 0}
 --- !u!1 &480543063
 GameObject:
   m_ObjectHideFlags: 0
@@ -1094,6 +1095,7 @@ MonoBehaviour:
   rotation: 180
   pumpkin: {fileID: 1204011508}
   pumpkinSize: 0
+  pumpkinPickup: {fileID: 0}
 --- !u!1001 &612797845
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1367,6 +1369,7 @@ MonoBehaviour:
   rotation: 180
   pumpkin: {fileID: 1987730488}
   pumpkinSize: 0
+  pumpkinPickup: {fileID: 0}
 --- !u!1 &918600791
 GameObject:
   m_ObjectHideFlags: 0
@@ -1651,7 +1654,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1977305440195788998, guid: 36acc887c333cb142b7dc70c05e28a18, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1
+      value: -10.4
       objectReference: {fileID: 0}
     - target: {fileID: 1977305440195788998, guid: 36acc887c333cb142b7dc70c05e28a18, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1659,7 +1662,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1977305440195788998, guid: 36acc887c333cb142b7dc70c05e28a18, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 10.29
       objectReference: {fileID: 0}
     - target: {fileID: 1977305440195788998, guid: 36acc887c333cb142b7dc70c05e28a18, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1724,7 +1727,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1204011509
 Transform:
   m_ObjectHideFlags: 0
@@ -2310,6 +2313,7 @@ MonoBehaviour:
   rotation: 180
   pumpkin: {fileID: 93603404}
   pumpkinSize: 0
+  pumpkinPickup: {fileID: 0}
 --- !u!1 &1643816153
 GameObject:
   m_ObjectHideFlags: 0
@@ -2485,7 +2489,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1817358458
 Transform:
   m_ObjectHideFlags: 0
@@ -2683,7 +2687,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1987730489
 Transform:
   m_ObjectHideFlags: 0
