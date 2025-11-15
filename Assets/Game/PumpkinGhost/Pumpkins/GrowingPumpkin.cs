@@ -24,7 +24,7 @@ public class GrowingPumpkin : MonoBehaviour
             size += growRate * Time.deltaTime;
 
             // Set size to max if it goes above
-            if (size < maxSize) {
+            if (size > maxSize) {
                 size = maxSize;
             }
 
@@ -38,5 +38,10 @@ public class GrowingPumpkin : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
 
+    }
+
+    // Returns the size of the pumpkin
+    public float GetSize() {
+        return size;
     }
 }
