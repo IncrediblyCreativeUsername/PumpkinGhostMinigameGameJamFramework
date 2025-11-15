@@ -13,7 +13,6 @@ namespace PumpkinGhost {
         [HideInInspector] public float timer = 0;
         // SCORING VARIABLES
         private MinigameManager.Ranking _ranking = new();
-        private int _deaths = 0;
         private int[] playerScores = new int[4];
         // UI VARIABLES
         [Header("UI")]
