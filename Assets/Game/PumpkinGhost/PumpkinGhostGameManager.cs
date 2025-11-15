@@ -14,7 +14,7 @@ namespace PumpkinGhost {
         // SCORING VARIABLES
         private MinigameManager.Ranking _ranking = new();
         private int _deaths = 0;
-        private int[] playerScores = new int {0,0,0,0}
+        private int[] playerScores = new int[4];
         // CAMERA ANIMATIONS VARIABLES
         [Header("Camera")]
         [SerializeField] Animator cameraAnimator;
@@ -67,7 +67,7 @@ namespace PumpkinGhost {
         }
         
         private void CalculateScores() {
-            playerScores
+            
         }
 
         IEnumerator EndMinigame() {
@@ -75,7 +75,7 @@ namespace PumpkinGhost {
             cameraAnimator.Play(endAnimation.name);
             yield return new WaitForSeconds(endAnimation.length);
             //Calculate Scores
-            CalculateScores()
+            CalculateScores();
             // End
             yield return new WaitForSeconds(2);
             MinigameManager.instance.EndMinigame(_ranking);
