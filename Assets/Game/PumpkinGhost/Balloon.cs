@@ -16,11 +16,18 @@ namespace PumpkinGhost {
         private Quaternion prevY;
         private Vector3 trailPos;
         private float angleLimit = 150.0F;
+
+        private float killable = 1.0F;
+
         // Start is called before the first frame update
         void Start()
         {
             prevY = owner.transform.rotation;
             //trailPos = owner.transform.position + (owner.transform.rotation * new Vector3(0,0,-1.8F));
+        }
+
+        void set_owner(MonoBehaviour o){
+            owner = o;
         }
 
         // Update is called once per frame
@@ -56,11 +63,25 @@ namespace PumpkinGhost {
 
             transform.rotation = Quaternion.Euler(tiltX,tiltY,0);
 
+            if (killable < 1.0F){
+                killable += 2.0F * Time.deltaTime;
+                killable = Mathf.Min(killable, 1.0F);
+                transform.localScale = new Vector3(1,1,1) * Mathf.Max(killable,0.0F);
+            }
+
             //prevY = owner.transform.rotation;
 
             //tiltX += 5.0F;
 
             //Quaternion.RotateTowards(transform.rotation, target.rotation, step);
+        }
+
+        void OnTriggerEnter(Collider other)
+        {
+            if (other.CompareTag("MainCamera") && killable >= 1.0F)
+            {
+                killable = -1.0F;
+            }
         }
     }
 }

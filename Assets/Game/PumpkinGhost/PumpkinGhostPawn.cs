@@ -41,6 +41,8 @@ namespace PumpkinGhost {
 
             _rigidbody = GetComponent<Rigidbody>();
             _audio = GetComponent<AudioSource>();
+
+           
         }
         
         // Handle input
