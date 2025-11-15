@@ -14,8 +14,12 @@ namespace PumpkinGhost {
         [SerializeField] private float speed = 0.25f;
         [SerializeField] private float gravity = -80f;
         [SerializeField] private float friction = 0.98f;
+
+        [SerializeField] private AudioClip sound_pumpkinPickup;
+        [SerializeField] private AudioClip sound_pumpkinThrow;
         
         private Rigidbody _rigidbody;
+        private AudioSource _audio;
         public static bool isPawnInputEnabled = true;
         private Vector2 _moveInput = Vector2.zero;
         public float rotation = 180;
@@ -36,6 +40,7 @@ namespace PumpkinGhost {
             }
 
             _rigidbody = GetComponent<Rigidbody>();
+            _audio = GetComponent<AudioSource>();
         }
         
         // Handle input
@@ -56,6 +61,7 @@ namespace PumpkinGhost {
                 // Throwing
                 if (pumpkinSize > 0)
                 {
+                     _audio.PlayOneShot(sound_pumpkinThrow);
                     pumpkin.SetActive(false);
                     pumpkinSize = 0.0f;
                 }
@@ -64,6 +70,7 @@ namespace PumpkinGhost {
                     // Pickup code
                     if (pumpkinPickup != null)
                     {
+                        _audio.PlayOneShot(sound_pumpkinPickup);
                         pumpkinSize = pumpkinPickup.GetSize();
                         pumpkin.SetActive(true);
                         pumpkin.transform.localScale = new Vector3(pumpkinSize * 0.01f, pumpkinSize * 0.01f, pumpkinSize * 0.01f);
