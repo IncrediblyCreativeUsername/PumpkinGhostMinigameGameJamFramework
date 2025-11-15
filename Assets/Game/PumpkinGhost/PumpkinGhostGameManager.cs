@@ -32,7 +32,7 @@ namespace PumpkinGhost {
         IEnumerator GameTimer() {
             // Intro Animation
             PumpkinGhostPawn.isPawnInputEnabled = false;
-            cameraAnimator.Play(startAnimation.name);
+            //cameraAnimator.Play(startAnimation.name);
             readyText.SetActive(true);
             yield return new WaitForSeconds(startAnimation.length);
             readyText.SetActive(false);
