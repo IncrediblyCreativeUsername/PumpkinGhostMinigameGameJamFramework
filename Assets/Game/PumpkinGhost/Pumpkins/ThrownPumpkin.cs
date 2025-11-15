@@ -8,21 +8,14 @@ public class ThrownPumpkin : MonoBehaviour
 
     public float speed;
     public GameObject model;
-<<<<<<< Updated upstream
-    private AudioSource _audio;
-
-    [SerializeField] private AudioClip sound_pumpkinHit;
-=======
     public int playerNum;
     public GameObject pumpkinRespawn;
->>>>>>> Stashed changes
 
     // Start is called before the first frame update
     void Start()
     {
         transform.rotation.Set(0, transform.rotation.y, 0, 0);
         GetComponent<Rigidbody>().AddForce(transform.forward * speed, ForceMode.Force);
-        _audio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -35,7 +28,6 @@ public class ThrownPumpkin : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        _audio.PlayOneShot(sound_pumpkinHit);
         // Check if colliding with a balloon
         if (other.gameObject.CompareTag("Respawn"))
         {
