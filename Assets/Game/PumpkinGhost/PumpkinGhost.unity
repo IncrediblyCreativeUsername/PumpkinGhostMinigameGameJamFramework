@@ -1675,11 +1675,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4094379704638652367, guid: 36acc887c333cb142b7dc70c05e28a18, type: 3}
       propertyPath: maxSize
-      value: 2.5
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4094379704638652367, guid: 36acc887c333cb142b7dc70c05e28a18, type: 3}
+      propertyPath: minSize
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4094379704638652367, guid: 36acc887c333cb142b7dc70c05e28a18, type: 3}
       propertyPath: growRate
-      value: 0.1
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 6900938502361092538, guid: 36acc887c333cb142b7dc70c05e28a18, type: 3}
       propertyPath: m_Name

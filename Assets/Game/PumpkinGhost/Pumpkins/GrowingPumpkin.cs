@@ -30,11 +30,13 @@ public class GrowingPumpkin : MonoBehaviour
             //Determine what model should be used based on ripeness
             if (size < minSize)
             {
+                GetComponent<SphereCollider>().enabled = false;
                 unripe.SetActive(true);
                 ripe.SetActive(false);
             }
             else
             {
+                GetComponent<SphereCollider>().enabled = true;
                 unripe.SetActive(false);
                 ripe.SetActive(true);
             }
