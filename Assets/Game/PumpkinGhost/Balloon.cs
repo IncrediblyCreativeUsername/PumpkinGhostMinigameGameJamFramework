@@ -19,11 +19,16 @@ namespace PumpkinGhost {
 
         private float killable = 1.0F;
 
+        [SerializeField] private AudioClip sound_balloonPop;
+        private AudioSource _audio;
+
         // Start is called before the first frame update
         void Start()
         {
             prevY = owner.transform.rotation.eulerAngles.y;
             //trailPos = owner.transform.position + (owner.transform.rotation * new Vector3(0,0,-1.8F));
+
+            _audio = GetComponent<AudioSource>();
         }
 
         void set_owner(MonoBehaviour o){
@@ -82,6 +87,7 @@ namespace PumpkinGhost {
             if (other.CompareTag("MainCamera") && killable >= 1.0F)
             {
                 killable = -1.0F;
+                _audio.PlayOneShot(sound_balloonPop);
             }
         }
     }
