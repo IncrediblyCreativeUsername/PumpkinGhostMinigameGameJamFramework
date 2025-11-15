@@ -14,7 +14,6 @@ public class ThrownPumpkin : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        transform.rotation.Set(0, transform.rotation.y, 0, 0);
         GetComponent<Rigidbody>().AddForce(transform.forward * speed, ForceMode.Force);
     }
 
@@ -22,8 +21,6 @@ public class ThrownPumpkin : MonoBehaviour
     void Update()
     {
         model.transform.Rotate(0, speed * Time.deltaTime, 0);
-        transform.rotation.Set(0, transform.rotation.y, 0, 0);
-        transform.position.Set(transform.position.x, 0, transform.position.z);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -32,7 +29,7 @@ public class ThrownPumpkin : MonoBehaviour
         if (other.gameObject.CompareTag("Respawn"))
         {
             // Place 1-3 new pumpkins on the ground
-            int numPumpkins = Random.Range(0, 2);
+            int numPumpkins = Random.Range(1, 3);
             for (int i = 0; i < numPumpkins; i++)
             {
                 // Places a pumpkin
