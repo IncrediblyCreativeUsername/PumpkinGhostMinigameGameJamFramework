@@ -11,13 +11,14 @@ public class GrowingPumpkin : MonoBehaviour
     public float minSize;
     public float growRate;
     public float size = 1.0f;
-    public GameObject unripe;
-    public GameObject ripe;
+
+    public GameObject pumpkinBody;
+    private Renderer _pumpkinBodyRenderer;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        _pumpkinBodyRenderer = pumpkinBody.GetComponent<Renderer>();
     }
 
     // Update is called once per frame
@@ -27,18 +28,20 @@ public class GrowingPumpkin : MonoBehaviour
             // Increase size if applicable
             size += growRate * Time.deltaTime;
 
-            //Determine what model should be used based on ripeness
+            // Set color based on size
+            if (size < minSize)
+            {
+                _pumpkinBodyRenderer.material.SetColor("_Color", Color.HSVToRGB(0.08f + (0.17f * (1 - ((size - 0.6f) / 0.4f))), 0.95f, 0.9f, false));
+            }
+
+            //Enable/disable collider based on size
             if (size < minSize)
             {
                 GetComponent<SphereCollider>().enabled = false;
-                unripe.SetActive(true);
-                ripe.SetActive(false);
             }
             else
             {
                 GetComponent<SphereCollider>().enabled = true;
-                unripe.SetActive(false);
-                ripe.SetActive(true);
             }
 
             // Set size to max if it goes above

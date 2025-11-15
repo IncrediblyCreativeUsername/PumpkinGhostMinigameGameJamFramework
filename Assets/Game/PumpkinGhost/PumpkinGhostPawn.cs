@@ -70,7 +70,7 @@ namespace PumpkinGhost {
                     pumpkin.SetActive(false);
 
                     // Create thrown projectile
-                    thrownPumpkin.transform.position = transform.position + (1.45f * transform.forward);
+                    thrownPumpkin.transform.position = transform.position + ((0.45f + pumpkinSize) * transform.forward);
                     thrownPumpkin.transform.rotation = transform.rotation;
                     thrownPumpkin.transform.localScale = new Vector3(pumpkinSize, pumpkinSize, pumpkinSize);
                     Instantiate(thrownPumpkin);
@@ -80,13 +80,13 @@ namespace PumpkinGhost {
                 else
                 {
                     // Pickup code
-                    if (pumpkinPickup != null)
+                    if (pumpkinPickup != null && Vector3.Distance(pumpkinPickup.transform.position, transform.position) < 3)
                     {
                         _audio.PlayOneShot(sound_pumpkinPickup);
                         pumpkinSize = pumpkinPickup.GetSize();
                         pumpkin.SetActive(true);
                         pumpkin.transform.localScale = new Vector3(pumpkinSize * 0.01f, pumpkinSize * 0.01f, pumpkinSize * 0.01f);
-                        pumpkin.transform.position.Set(0, 0, 0.45f + (pumpkinSize));
+                        pumpkin.transform.localPosition = new Vector3(0, 0, 0.45f + (pumpkinSize));
                         pumpkinPickup.Delete();
                         pumpkinPickup = null;
                     }
@@ -101,7 +101,11 @@ namespace PumpkinGhost {
                 return;
             }
 
-            _rigidbody.velocity = (gravity * Time.deltaTime * Vector3.up) + (((float) Math.Pow(friction, Time.deltaTime + 1)) * (_rigidbody.velocity + new Vector3(_moveInput.x * speed, 0, _moveInput.y * speed)));
+            float modifiedSpeed = speed;
+            if (pumpkinSize > 0) {
+                modifiedSpeed *= 1 / pumpkinSize;
+            }
+            _rigidbody.velocity = (gravity * Time.deltaTime * Vector3.up) + (((float) Math.Pow(friction, Time.deltaTime + 1)) * (_rigidbody.velocity + new Vector3(_moveInput.x * modifiedSpeed, 0, _moveInput.y * modifiedSpeed)));
             
             if (_rigidbody.velocity.magnitude < 0.7) {
                 _rigidbody.velocity = new Vector3(0, _rigidbody.velocity.y, 0);

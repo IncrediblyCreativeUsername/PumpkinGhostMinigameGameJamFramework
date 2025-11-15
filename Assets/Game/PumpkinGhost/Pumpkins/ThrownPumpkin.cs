@@ -8,16 +8,13 @@ public class ThrownPumpkin : MonoBehaviour
 
     public float speed;
     public GameObject model;
-    private AudioSource _audio;
-
-    [SerializeField] private AudioClip sound_pumpkinHit;
+    public int playerNum;
+    public GameObject pumpkinRespawn;
 
     // Start is called before the first frame update
     void Start()
     {
-        transform.rotation.Set(0, transform.rotation.y, 0, transform.rotation.w);
         GetComponent<Rigidbody>().AddForce(transform.forward * speed, ForceMode.Force);
-        _audio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -28,11 +25,27 @@ public class ThrownPumpkin : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        _audio.PlayOneShot(sound_pumpkinHit);
         // Check if colliding with a balloon
-        if (other.gameObject.CompareTag("Balloon"))
+        if (other.gameObject.CompareTag("Respawn"))
         {
-            //PumpkinGhost.PumpkinGhostPawn balloon = other.gameObject.GetComponent<PumpkinGhost.PumpkinGhostPawn>();
+            // Place 1-3 new pumpkins on the ground
+            int numPumpkins = Random.Range(1, 3);
+            for (int i = 0; i < numPumpkins; i++)
+            {
+                // Places a pumpkin
+                pumpkinRespawn.transform.position = transform.position + new Vector3 (Random.Range(-3.0f, 3.0f), 0, Random.Range(-3.0f, 3.0f));
+                Instantiate(pumpkinRespawn);
+            }
+
+            Destroy(this);
+            gameObject.SetActive(false);
+        }
+        else if (other.gameObject.CompareTag("EditorOnly") || other.gameObject.CompareTag("MainCamera"))
+        {
+            pumpkinRespawn.transform.position = transform.position;
+            Instantiate(pumpkinRespawn);
+            Destroy(this);
+            gameObject.SetActive(false);
         }
     }
 }
