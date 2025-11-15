@@ -1025,6 +1025,8 @@ MonoBehaviour:
   speed: 0.5
   gravity: -80
   friction: 0.9
+  sound_pumpkinPickup: {fileID: 8300000, guid: 98ace3412697747bcae2cf5825b6f80c, type: 3}
+  sound_pumpkinThrow: {fileID: 8300000, guid: 7ba413e60e7c2482089936776d2111c3, type: 3}
   rotation: 180
   pumpkin: {fileID: 1347901618}
   thrownPumpkin: {fileID: 4341029093781169405, guid: 9fdc3e97f4621b048881db287f7667c5, type: 3}
@@ -1421,6 +1423,8 @@ MonoBehaviour:
   speed: 0.5
   gravity: -80
   friction: 0.9
+  sound_pumpkinPickup: {fileID: 8300000, guid: 98ace3412697747bcae2cf5825b6f80c, type: 3}
+  sound_pumpkinThrow: {fileID: 8300000, guid: 7ba413e60e7c2482089936776d2111c3, type: 3}
   rotation: 180
   pumpkin: {fileID: 1452324122}
   thrownPumpkin: {fileID: 4341029093781169405, guid: 9fdc3e97f4621b048881db287f7667c5, type: 3}
@@ -1795,6 +1799,8 @@ MonoBehaviour:
   speed: 0.5
   gravity: -80
   friction: 0.9
+  sound_pumpkinPickup: {fileID: 8300000, guid: 98ace3412697747bcae2cf5825b6f80c, type: 3}
+  sound_pumpkinThrow: {fileID: 8300000, guid: 7ba413e60e7c2482089936776d2111c3, type: 3}
   rotation: 180
   pumpkin: {fileID: 858077372}
   thrownPumpkin: {fileID: 4341029093781169405, guid: 9fdc3e97f4621b048881db287f7667c5, type: 3}
@@ -3344,6 +3350,8 @@ MonoBehaviour:
   speed: 0.5
   gravity: -80
   friction: 0.9
+  sound_pumpkinPickup: {fileID: 8300000, guid: 98ace3412697747bcae2cf5825b6f80c, type: 3}
+  sound_pumpkinThrow: {fileID: 8300000, guid: 7ba413e60e7c2482089936776d2111c3, type: 3}
   rotation: 180
   pumpkin: {fileID: 1473512122}
   thrownPumpkin: {fileID: 4341029093781169405, guid: 9fdc3e97f4621b048881db287f7667c5, type: 3}
