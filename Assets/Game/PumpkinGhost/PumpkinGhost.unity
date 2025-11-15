@@ -1879,9 +1879,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   duration: 120
   timer: 0
-  cameraAnimator: {fileID: 1447818456}
-  startAnimation: {fileID: 7400000, guid: 5017fe1f3d87e46f0b70b5df93a8ef98, type: 2}
-  endAnimation: {fileID: 7400000, guid: 39d6c36171d1f4dc5a4fe061487185d8, type: 2}
   readyText: {fileID: 137621839}
 --- !u!1 &1447818452
 GameObject:
@@ -1976,27 +1973,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
---- !u!95 &1447818456
-Animator:
-  serializedVersion: 5
+--- !u!114 &1447818456
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1447818452}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9fe89e0a2054cb44da69e78b01d732ff, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6fa74c0d522a42fba07be72635bb55a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  players:
+  - {fileID: 779269814}
+  - {fileID: 480543063}
+  - {fileID: 1466828598}
+  - {fileID: 423871323}
 --- !u!1 &1449726618
 GameObject:
   m_ObjectHideFlags: 0

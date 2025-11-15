@@ -15,11 +15,6 @@ namespace PumpkinGhost {
         private MinigameManager.Ranking _ranking = new();
         private int _deaths = 0;
         private int[] playerScores = new int[4];
-        // CAMERA ANIMATIONS VARIABLES
-        [Header("Camera")]
-        [SerializeField] Animator cameraAnimator;
-        [SerializeField] private AnimationClip startAnimation;
-        [SerializeField] AnimationClip endAnimation;
         // UI VARIABLES
         [Header("UI")]
         [SerializeField] private GameObject readyText;
@@ -32,9 +27,8 @@ namespace PumpkinGhost {
         IEnumerator GameTimer() {
             // Intro Animation
             PumpkinGhostPawn.isPawnInputEnabled = false;
-            //cameraAnimator.Play(startAnimation.name);
             readyText.SetActive(true);
-            yield return new WaitForSeconds(startAnimation.length);
+            yield return new WaitForSeconds(1);
             readyText.SetActive(false);
             PumpkinGhostPawn.isPawnInputEnabled = true;
             // Timer
@@ -71,9 +65,6 @@ namespace PumpkinGhost {
         }
 
         IEnumerator EndMinigame() {
-            // Animation
-            cameraAnimator.Play(endAnimation.name);
-            yield return new WaitForSeconds(endAnimation.length);
             //Calculate Scores
             CalculateScores();
             // End
