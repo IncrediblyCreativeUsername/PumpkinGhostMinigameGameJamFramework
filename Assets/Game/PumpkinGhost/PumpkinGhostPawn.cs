@@ -60,7 +60,7 @@ namespace PumpkinGhost {
                     pumpkin.SetActive(false);
 
                     // Create thrown projectile
-                    thrownPumpkin.transform.position = transform.position;
+                    thrownPumpkin.transform.position = transform.position + (1.45f * transform.forward);
                     thrownPumpkin.transform.rotation = transform.rotation;
                     thrownPumpkin.transform.localScale = new Vector3(pumpkinSize, pumpkinSize, pumpkinSize);
                     Instantiate(thrownPumpkin);
