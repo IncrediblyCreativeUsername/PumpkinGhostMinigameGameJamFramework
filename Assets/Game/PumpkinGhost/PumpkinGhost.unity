@@ -309,13 +309,13 @@ Light:
   m_GameObject: {fileID: 165284803}
   m_Enabled: 1
   serializedVersion: 10
-  m_Type: 1
+  m_Type: 0
   m_Shape: 0
-  m_Color: {r: 0.1509434, g: 0.004983983, b: 0.004983983, a: 1}
+  m_Color: {r: 0.7971698, g: 0.9189948, b: 1, a: 1}
   m_Intensity: 1
-  m_Range: 10
-  m_SpotAngle: 30
-  m_InnerSpotAngle: 21.80208
+  m_Range: 50
+  m_SpotAngle: 99.22772
+  m_InnerSpotAngle: 18.412802
   m_CookieSize: 10
   m_Shadows:
     m_Type: 2
@@ -371,7 +371,7 @@ Transform:
   m_GameObject: {fileID: 165284803}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalPosition: {x: 0, y: 16.35, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1884,7 +1884,7 @@ GameObject:
   - component: {fileID: 918600792}
   m_Layer: 10
   m_Name: Wall (4)
-  m_TagString: Untagged
+  m_TagString: EditorOnly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -2052,7 +2052,7 @@ GameObject:
   - component: {fileID: 1047518348}
   m_Layer: 10
   m_Name: Wall (3)
-  m_TagString: Untagged
+  m_TagString: EditorOnly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -3245,7 +3245,7 @@ GameObject:
   - component: {fileID: 1643816154}
   m_Layer: 10
   m_Name: Wall (2)
-  m_TagString: Untagged
+  m_TagString: EditorOnly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -4000,7 +4000,7 @@ GameObject:
   - component: {fileID: 2057382229}
   m_Layer: 10
   m_Name: Wall (1)
-  m_TagString: Untagged
+  m_TagString: EditorOnly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
