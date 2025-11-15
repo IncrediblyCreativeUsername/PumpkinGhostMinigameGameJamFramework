@@ -8,8 +8,11 @@ public class GrowingPumpkin : MonoBehaviour
 {
 
     public float maxSize;
+    public float minSize;
     public float growRate;
     private float size = 1.0f;
+    public GameObject unripe;
+    public GameObject ripe;
 
     // Start is called before the first frame update
     void Start()
@@ -24,8 +27,21 @@ public class GrowingPumpkin : MonoBehaviour
             // Increase size if applicable
             size += growRate * Time.deltaTime;
 
+            //Determine what model should be used based on ripeness
+            if (size < minSize)
+            {
+                unripe.SetActive(true);
+                ripe.SetActive(false);
+            }
+            else
+            {
+                unripe.SetActive(false);
+                ripe.SetActive(true);
+            }
+
             // Set size to max if it goes above
-            if (size > maxSize) {
+            if (size > maxSize)
+            {
                 size = maxSize;
             }
 
@@ -38,7 +54,7 @@ public class GrowingPumpkin : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         // Check if colliding with a player
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player") && size > minSize)
         {
             PumpkinGhost.PumpkinGhostPawn player = other.gameObject.GetComponent<PumpkinGhost.PumpkinGhostPawn>();
             player.pumpkinPickup = this;
