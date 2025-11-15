@@ -5,20 +5,15 @@ using Game.MinigameFramework.Scripts.Framework.Input;
 using TMPro;
 using UnityEngine;
 
-namespace Examples.FumperFalls {
-    public class FumperFallsGameManager : MonoBehaviour {
+namespace PumpkinGhost {
+    public class PumpkinGhostGameManager : MonoBehaviour {
         // TIME VARIABLES
         [Header("Time")]
-        public float duration = 120;
+        public float duration = 20;
         [HideInInspector] public float timer = 0;
         // SCORING VARIABLES
         private MinigameManager.Ranking _ranking = new();
-        private int _deaths = 0;
-        // CAMERA ANIMATIONS VARIABLES
-        [Header("Camera")]
-        [SerializeField] Animator cameraAnimator;
-        [SerializeField] private AnimationClip startAnimation;
-        [SerializeField] AnimationClip endAnimation;
+        private int[] playerScores = new int[4];
         // UI VARIABLES
         [Header("UI")]
         [SerializeField] private GameObject readyText;
@@ -30,12 +25,11 @@ namespace Examples.FumperFalls {
         }
         IEnumerator GameTimer() {
             // Intro Animation
-            FumperFallsPawn.isPawnInputEnabled = false;
-            cameraAnimator.Play(startAnimation.name);
+            PumpkinGhostPawn.isPawnInputEnabled = false;
             readyText.SetActive(true);
-            yield return new WaitForSeconds(startAnimation.length);
+            yield return new WaitForSeconds(1);
             readyText.SetActive(false);
-            FumperFallsPawn.isPawnInputEnabled = true;
+            PumpkinGhostPawn.isPawnInputEnabled = true;
             // Timer
             while (timer < duration) {
                 timer += Time.deltaTime;
@@ -51,6 +45,7 @@ namespace Examples.FumperFalls {
             }
         }
         private void KillPlayer(Pawn pawn) {
+            /*
             print($"Player {pawn.playerIndex} has been eliminated.");
             
             if(pawn.playerIndex >= 0) { // if pawn is bound to a player
@@ -61,12 +56,16 @@ namespace Examples.FumperFalls {
             if (_deaths == 3) {
                 StartCoroutine(EndMinigame());
             }
+            */
         }
         
+        private void CalculateScores() {
+            
+        }
+
         IEnumerator EndMinigame() {
-            // Animation
-            cameraAnimator.Play(endAnimation.name);
-            yield return new WaitForSeconds(endAnimation.length);
+            //Calculate Scores
+            CalculateScores();
             // End
             yield return new WaitForSeconds(2);
             MinigameManager.instance.EndMinigame(_ranking);
