@@ -14,6 +14,7 @@ namespace PumpkinGhost {
         // SCORING VARIABLES
         private MinigameManager.Ranking _ranking = new();
         private int _deaths = 0;
+        private int[] playerScores = new int {0,0,0,0}
         // CAMERA ANIMATIONS VARIABLES
         [Header("Camera")]
         [SerializeField] Animator cameraAnimator;
@@ -51,6 +52,7 @@ namespace PumpkinGhost {
             }
         }
         private void KillPlayer(Pawn pawn) {
+            /*
             print($"Player {pawn.playerIndex} has been eliminated.");
             
             if(pawn.playerIndex >= 0) { // if pawn is bound to a player
@@ -61,12 +63,19 @@ namespace PumpkinGhost {
             if (_deaths == 3) {
                 StartCoroutine(EndMinigame());
             }
+            */
         }
         
+        private void CalculateScores() {
+            playerScores
+        }
+
         IEnumerator EndMinigame() {
             // Animation
             cameraAnimator.Play(endAnimation.name);
             yield return new WaitForSeconds(endAnimation.length);
+            //Calculate Scores
+            CalculateScores()
             // End
             yield return new WaitForSeconds(2);
             MinigameManager.instance.EndMinigame(_ranking);
