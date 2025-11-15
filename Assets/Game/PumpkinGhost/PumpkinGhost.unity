@@ -1807,9 +1807,6 @@ MonoBehaviour:
 =======
   pumpkin: {fileID: 458276981}
   thrownPumpkin: {fileID: 4341029093781169405, guid: 9fdc3e97f4621b048881db287f7667c5, type: 3}
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
 >>>>>>> Stashed changes
   pumpkinSize: 0
   pumpkinPickup: {fileID: 0}
