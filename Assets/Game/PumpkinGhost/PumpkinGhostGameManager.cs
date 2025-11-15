@@ -64,6 +64,11 @@ namespace PumpkinGhost {
             }
             */
         }
+
+        private void Update()
+        {
+            _audio.pitch = Time.timeScale;
+        }
         
         private void CalculateScores() {
             
