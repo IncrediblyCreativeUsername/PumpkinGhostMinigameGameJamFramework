@@ -9,7 +9,7 @@ namespace Examples.FumperFalls {
     public class FumperFallsGameManager : MonoBehaviour {
         // TIME VARIABLES
         [Header("Time")]
-        public float duration = 20;
+        public float duration = 120;
         [HideInInspector] public float timer = 0;
         // SCORING VARIABLES
         private MinigameManager.Ranking _ranking = new();

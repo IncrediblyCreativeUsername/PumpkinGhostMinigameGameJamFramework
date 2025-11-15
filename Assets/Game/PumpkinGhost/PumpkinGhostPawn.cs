@@ -1,3 +1,4 @@
+using System;
 using Game.MinigameFramework.Scripts.Framework.Input;
 using Game.MinigameFramework.Scripts.Tags;
 using Unity.VisualScripting;
@@ -15,6 +16,9 @@ namespace PumpkinGhost {
         public static bool isPawnInputEnabled = true;
         private Vector2 _moveInput = Vector2.zero;
         public float rotation = 180;
+
+        public GameObject pumpkin;
+        public float pumpkinSize;
 
         // Disable Unity's default gravity when this component is added
         private void Reset() {
@@ -44,7 +48,8 @@ namespace PumpkinGhost {
                 return;
             }
 
-            _rigidbody.velocity = (gravity * Time.deltaTime * Vector3.up) + (_rigidbody.velocity + new Vector3(_moveInput.x * speed, 0, _moveInput.y * speed)) * Mathf.Pow(friction, Time.deltaTime + 1);
+            _rigidbody.velocity = (gravity * Time.deltaTime * Vector3.up) + (((float) Math.Pow(friction, Time.deltaTime + 1)) * (_rigidbody.velocity + new Vector3(_moveInput.x * speed, 0, _moveInput.y * speed)));
+            
             if (_rigidbody.velocity.magnitude < 0.7) {
                 _rigidbody.velocity = new Vector3(0, _rigidbody.velocity.y, 0);
             }
