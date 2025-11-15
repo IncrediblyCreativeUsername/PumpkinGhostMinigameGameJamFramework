@@ -65,9 +65,9 @@ namespace PumpkinGhost {
                     if (pumpkinPickup != null)
                     {
                         pumpkinSize = pumpkinPickup.GetSize();
-                        pumpkin.transform.localScale = new Vector3(pumpkinSize, pumpkinSize, pumpkinSize);
-                        pumpkin.transform.position.Set(0, 0, 0.45f + (0.5f * pumpkinSize));
                         pumpkin.SetActive(true);
+                        pumpkin.transform.localScale = new Vector3(pumpkinSize * 0.01f, pumpkinSize * 0.01f, pumpkinSize * 0.01f);
+                        pumpkin.transform.position.Set(0, 0, 0.45f + (pumpkinSize));
                         pumpkinPickup.Delete();
                         pumpkinPickup = null;
                     }
