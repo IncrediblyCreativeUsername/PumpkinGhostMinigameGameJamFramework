@@ -11,6 +11,8 @@ namespace PumpkinGhost {
     [RequireComponent(typeof(Rigidbody))]
     public class PumpkinGhostPawn : Pawn {
         [SerializeField] private int playerNum;
+
+        [SerializeField] private GameObject balloon;
         [SerializeField] private float speed = 0.25f;
         [SerializeField] private float gravity = -80f;
         [SerializeField] private float friction = 0.98f;
@@ -37,6 +39,7 @@ namespace PumpkinGhost {
         private void Awake() {
             if (playerNum > 1 && playerNum > PlayerManager.GetNumPlayers()) {
                 gameObject.SetActive(false);
+                balloon.SetActive(false);
             }
 
             _rigidbody = GetComponent<Rigidbody>();
