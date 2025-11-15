@@ -13,7 +13,7 @@ namespace PumpkinGhost {
         private float accY = 0.0F;
         public float vY = 0.0F;
         private float rigidity = 54.2F;
-        private Quaternion prevY;
+        private float prevY;
         private Vector3 trailPos;
         private float angleLimit = 150.0F;
 
@@ -22,7 +22,7 @@ namespace PumpkinGhost {
         // Start is called before the first frame update
         void Start()
         {
-            prevY = owner.transform.rotation;
+            prevY = owner.transform.rotation.eulerAngles.y;
             //trailPos = owner.transform.position + (owner.transform.rotation * new Vector3(0,0,-1.8F));
         }
 
@@ -52,9 +52,10 @@ namespace PumpkinGhost {
             if (Mathf.Abs(lol) > angleLimit){
                 tiltY = owner.transform.rotation.eulerAngles.y + angleLimit * Mathf.Sign(lol);
                 lol = Mathf.Sign(lol) * angleLimit;
-                vY = 800.0F * Mathf.Sign(lol); 
+                //vY = 800.0F * Mathf.Sign(lol); 
 
             }
+            vY += Mathf.DeltaAngle(prevY, owner.transform.rotation.eulerAngles.y) * 1.4F;
             accY = -rigidity * lol;
             vY += accY * Time.deltaTime;
             vY *= Mathf.Pow(0.34F, Time.deltaTime);
@@ -69,7 +70,7 @@ namespace PumpkinGhost {
                 transform.localScale = new Vector3(1,1,1) * Mathf.Max(killable,0.0F);
             }
 
-            //prevY = owner.transform.rotation;
+            prevY = owner.transform.rotation.eulerAngles.y;
 
             //tiltX += 5.0F;
 
