@@ -72,6 +72,7 @@ namespace PumpkinGhost {
         
         public void AddScore(int player, float pumpkinSize){
             playerScores[player] += (int)(pumpkinSize * 4.0F) - 3;
+            Debug.Log(playerScores[player]);
         }
 
         private void CalculateScores() {
