@@ -58,11 +58,17 @@ public class GrowingPumpkin : MonoBehaviour
     // Collision detection for the trigger
     private void OnTriggerEnter(Collider other)
     {
+
         // Check if colliding with a player
         if (other.gameObject.CompareTag("Player") && size > minSize)
         {
             PumpkinGhost.PumpkinGhostPawn player = other.gameObject.GetComponent<PumpkinGhost.PumpkinGhostPawn>();
             player.pumpkinPickup = this;
+        }
+         else if (other.gameObject.CompareTag("MainCamera"))
+        {
+            size = 0.6f;
+            
         }
     }
 
