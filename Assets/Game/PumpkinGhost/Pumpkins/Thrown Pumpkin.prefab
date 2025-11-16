@@ -28,9 +28,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4341029093781169405}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0.6106881, z: 0, w: 0.7918713}
-  m_LocalPosition: {x: 0.84353185, y: 0.36999997, z: 1.5755239}
-  m_LocalScale: {x: 1.4129925, y: 1.4129925, z: 1.4129925}
+  m_LocalRotation: {x: 0, y: 0.70710665, z: 0, w: 0.7071069}
+  m_LocalPosition: {x: -0.83640206, y: 0.36999997, z: -0.3455859}
+  m_LocalScale: {x: 1.4184262, y: 1.4184262, z: 1.4184262}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2652239341075407407}
@@ -98,7 +98,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 450
   model: {fileID: 3424271788009191573}
-  playerNum: 2
+  playerNum: 1
   pumpkinRespawn: {fileID: 6900938502361092538, guid: 36acc887c333cb142b7dc70c05e28a18, type: 3}
   particles: {fileID: 4460132603570751805, guid: 0c2834e9865268441851757b6b28ee55, type: 3}
   sound_pumpkinHit: {fileID: 8300000, guid: dfcaa5f91bc454fbb80c1b0219065f6c, type: 3}
