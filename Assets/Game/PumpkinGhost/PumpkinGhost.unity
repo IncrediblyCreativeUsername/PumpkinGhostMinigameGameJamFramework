@@ -1409,7 +1409,6 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -5.13, z: -0}
-<<<<<<< HEAD
   m_LocalScale: {x: 129.58607, y: 10, z: 113.37459}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2043,6 +2042,7 @@ MonoBehaviour:
   pumpkin: {fileID: 1347901618}
   thrownPumpkin: {fileID: 4341029093781169405, guid: 9fdc3e97f4621b048881db287f7667c5, type: 3}
   pumpkinSize: 0
+  pumpkinRespawn: {fileID: 6900938502361092538, guid: 36acc887c333cb142b7dc70c05e28a18, type: 3}
   particles: {fileID: 4460132603570751805, guid: 0c2834e9865268441851757b6b28ee55, type: 3}
   pumpkinPickup: {fileID: 0}
 --- !u!82 &423871331
@@ -2598,6 +2598,7 @@ MonoBehaviour:
   pumpkin: {fileID: 1452324122}
   thrownPumpkin: {fileID: 4341029093781169405, guid: 9fdc3e97f4621b048881db287f7667c5, type: 3}
   pumpkinSize: 0
+  pumpkinRespawn: {fileID: 6900938502361092538, guid: 36acc887c333cb142b7dc70c05e28a18, type: 3}
   particles: {fileID: 4460132603570751805, guid: 0c2834e9865268441851757b6b28ee55, type: 3}
   pumpkinPickup: {fileID: 0}
 --- !u!82 &480543071
@@ -4320,6 +4321,7 @@ MonoBehaviour:
   pumpkin: {fileID: 858077372}
   thrownPumpkin: {fileID: 4341029093781169405, guid: 9fdc3e97f4621b048881db287f7667c5, type: 3}
   pumpkinSize: 0
+  pumpkinRespawn: {fileID: 6900938502361092538, guid: 36acc887c333cb142b7dc70c05e28a18, type: 3}
   particles: {fileID: 4460132603570751805, guid: 0c2834e9865268441851757b6b28ee55, type: 3}
   pumpkinPickup: {fileID: 0}
 --- !u!82 &779269822
@@ -7503,6 +7505,7 @@ MonoBehaviour:
   pumpkin: {fileID: 1473512122}
   thrownPumpkin: {fileID: 4341029093781169405, guid: 9fdc3e97f4621b048881db287f7667c5, type: 3}
   pumpkinSize: 0
+  pumpkinRespawn: {fileID: 6900938502361092538, guid: 36acc887c333cb142b7dc70c05e28a18, type: 3}
   particles: {fileID: 4460132603570751805, guid: 0c2834e9865268441851757b6b28ee55, type: 3}
   pumpkinPickup: {fileID: 0}
 --- !u!82 &1466828606
