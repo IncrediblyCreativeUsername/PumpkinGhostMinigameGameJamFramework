@@ -77,8 +77,14 @@ namespace PumpkinGhost {
                 timer -= Time.deltaTime;
                 timerText.SetActive(true);
                 if (timer >= 0) {
-                    timerTextDraw.GetComponent<TextMeshProUGUI>().text = ((int) timer).ToString();
-                    timerTextOutline.GetComponent<TextMeshProUGUI>().text = ((int) timer).ToString();
+                    if (timer > 18) {
+                        timerTextDraw.GetComponent<TextMeshProUGUI>().text = ((int) timer).ToString();
+                        timerTextOutline.GetComponent<TextMeshProUGUI>().text = ((int) timer).ToString();
+                    }
+                    else {
+                        timerTextDraw.GetComponent<TextMeshProUGUI>().text = (((int) (timer * 2)) / 2f).ToString("F1");
+                        timerTextOutline.GetComponent<TextMeshProUGUI>().text = (((int) (timer * 2)) / 2f).ToString("F1");
+                    }
                 }
             }
         }
@@ -96,6 +102,7 @@ namespace PumpkinGhost {
             //Calculate Scores
             CalculateScores();
             // End
+            PumpkinGhostPawn.isPawnInputEnabled = false;
             yield return new WaitForSeconds(2);
             MinigameManager.instance.EndMinigame(_ranking);
         }
