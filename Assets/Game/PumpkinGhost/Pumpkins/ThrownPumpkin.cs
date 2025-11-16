@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
@@ -36,11 +37,13 @@ public class ThrownPumpkin : MonoBehaviour
         if (other.gameObject.CompareTag("Respawn"))
         {
             // Place 1-3 new pumpkins on the ground
-            int numPumpkins = (int)Mathf.Ceil(Random.Range(2, 5) / 2);
+            int numPumpkins = (int)Mathf.Ceil(UnityEngine.Random.Range(2, 5) / 2);
             for (int i = 0; i < numPumpkins; i++)
             {
                 // Places a pumpkin
-                pumpkinRespawn.transform.position = transform.position + new Vector3 (Random.Range(-3.0f, 3.0f), 0, Random.Range(-3.0f, 3.0f));
+                do {
+                    pumpkinRespawn.transform.position = transform.position + new Vector3(UnityEngine.Random.Range(-3.0f, 3.0f), 0, UnityEngine.Random.Range(-3.0f, 3.0f));
+                } while (Math.Abs(pumpkinRespawn.transform.position.x) > 27 || Math.Abs(pumpkinRespawn.transform.position.z) > 27);
                 Instantiate(pumpkinRespawn);
             }
 
