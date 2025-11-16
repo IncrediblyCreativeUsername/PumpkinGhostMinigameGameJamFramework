@@ -29,14 +29,14 @@ Transform:
   m_GameObject: {fileID: 4341029093781169405}
   serializedVersion: 2
 <<<<<<< HEAD
-  m_LocalRotation: {x: -0.000000021951163, y: 0.7071068, z: -0.00000002189418, w: -0.7071068}
-  m_LocalPosition: {x: -10.952367, y: 0.36999983, z: 9.258134}
-  m_LocalScale: {x: 1.2934995, y: 1.2934995, z: 1.2934995}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0.000064090884}
+  m_LocalPosition: {x: 10.028592, y: 0.37, z: -4.645317}
+  m_LocalScale: {x: 1.5856413, y: 1.5856413, z: 1.5856413}
 =======
-  m_LocalRotation: {x: 0, y: 0.46653616, z: 0, w: -0.8845022}
-  m_LocalPosition: {x: 9.884682, y: 0.36999977, z: -12.7819}
-  m_LocalScale: {x: 2.25, y: 2.25, z: 2.25}
->>>>>>> 1f8441cfa08ac64ba82c8dbbc07e136b1998fda1
+  m_LocalRotation: {x: 0, y: 0.012521568, z: 0, w: -0.9999216}
+  m_LocalPosition: {x: -1.193934, y: 0.37000003, z: -12.930495}
+  m_LocalScale: {x: 1.1684006, y: 1.1684006, z: 1.1684006}
+>>>>>>> 806003c35eb8e5d214fdbd2b57b633466a938907
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2652239341075407407}
@@ -102,10 +102,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4648d33aa20aba49ba5cd4e9d4ef0dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 450
+<<<<<<< HEAD
+  speed: 800
+=======
+  speed: 600
+>>>>>>> 806003c35eb8e5d214fdbd2b57b633466a938907
   model: {fileID: 3424271788009191573}
-  playerNum: 0
+  playerNum: 1
   pumpkinRespawn: {fileID: 6900938502361092538, guid: 36acc887c333cb142b7dc70c05e28a18, type: 3}
+  particles: {fileID: 4460132603570751805, guid: 0c2834e9865268441851757b6b28ee55, type: 3}
   sound_pumpkinHit: {fileID: 8300000, guid: dfcaa5f91bc454fbb80c1b0219065f6c, type: 3}
 --- !u!82 &-6455264798043438122
 AudioSource:
