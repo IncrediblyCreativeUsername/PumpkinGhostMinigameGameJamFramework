@@ -10,7 +10,7 @@ public class ThrownPumpkin : MonoBehaviour
     public GameObject model;
     public int playerNum;
     public GameObject pumpkinRespawn;
-
+    public GameObject particles;
 
     //Sound Effects:
     [SerializeField] private AudioClip sound_pumpkinHit;
@@ -61,7 +61,10 @@ public class ThrownPumpkin : MonoBehaviour
     }
 
     IEnumerator DestroySelf() {
-            
+
+        particles.transform.position = transform.position;
+        Instantiate(particles);
+
         speed = 0;
         this.transform.localScale = new Vector3(0,0,0);
         this.GetComponent<Collider>().enabled = false;
