@@ -71,7 +71,7 @@ namespace PumpkinGhost {
         }
         
         public void AddScore(int player, float pumpkinSize){
-            playerScores[player] += (int)(pumpkinSize * 2.0F);
+            playerScores[player] += (int)(pumpkinSize * 4.0F) - 3;
         }
 
         private void CalculateScores() {
