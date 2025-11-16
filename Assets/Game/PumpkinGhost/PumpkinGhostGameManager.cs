@@ -70,8 +70,8 @@ namespace PumpkinGhost {
             _audio.pitch = Time.timeScale;
         }
         
-        public void AddScore(int player){
-            playerScores[player] ++;
+        public void AddScore(int player, float pumpkinSize){
+            playerScores[player] += (int)(pumpkinSize * 2.0F);
         }
 
         private void CalculateScores() {

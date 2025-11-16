@@ -89,7 +89,7 @@ namespace PumpkinGhost {
         {
             if (other.CompareTag("MainCamera") && killable >= 1.0F)
             {
-                manager.GetComponent<PumpkinGhostGameManager>().AddScore(other.GetComponent<ThrownPumpkin>().playerNum);
+                manager.GetComponent<PumpkinGhostGameManager>().AddScore(other.GetComponent<ThrownPumpkin>().playerNum, other.transform.localScale.y);
                 killable = -1.0F;
                 _audio.PlayOneShot(sound_balloonPop);
             }
