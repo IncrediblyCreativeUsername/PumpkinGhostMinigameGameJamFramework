@@ -4306,7 +4306,7 @@ MonoBehaviour:
   pumpkin: {fileID: 858077372}
   thrownPumpkin: {fileID: 4341029093781169405, guid: 9fdc3e97f4621b048881db287f7667c5, type: 3}
   pumpkinSize: 0
-  pumpkinPickup: {fileID: 1962087952}
+  pumpkinPickup: {fileID: 0}
 --- !u!82 &779269822
 AudioSource:
   m_ObjectHideFlags: 0
@@ -9402,17 +9402,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 2049984657}
   m_SourcePrefab: {fileID: 100100000, guid: 455bedbc2e0b926268a97c3558c01766, type: 3}
---- !u!114 &1962087952 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4094379704638652367, guid: 36acc887c333cb142b7dc70c05e28a18, type: 3}
-  m_PrefabInstance: {fileID: 1087369722}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3c372b1cf70c18459f8e51e191402d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1965711312 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 99acd33db89f04ae691ab228c6af49b8, type: 3}
