@@ -36,6 +36,7 @@ public class ThrownPumpkin : MonoBehaviour
         // Check if colliding with a balloon
         if (other.gameObject.CompareTag("Respawn"))
         {
+            other.gameObject.transform.GetComponent<Balloon>().PumpkinHitBalloon(playerNum, this.transform.localScale.x);
             // Place 1-3 new pumpkins on the ground
             int numPumpkins = (int)Mathf.Ceil(UnityEngine.Random.Range(2, 5) / 2);
             for (int i = 0; i < numPumpkins; i++)

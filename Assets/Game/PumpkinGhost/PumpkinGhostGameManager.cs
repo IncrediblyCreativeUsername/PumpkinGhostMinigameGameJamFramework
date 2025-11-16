@@ -114,7 +114,7 @@ namespace PumpkinGhost {
                     else
                         colorText = "yellow";
                     
-                    if (pnum <= numPlayers + 1) {
+                    if (pnum <= numPlayers) {
                         String textAdd = "P" + (pnum).ToString() + ": " + score;
                         scoreTextDraw.GetComponent<TextMeshProUGUI>().text += "<color=\"" + colorText + "\">" + textAdd + " </color>";
                         scoreTextOutline.GetComponent<TextMeshProUGUI>().text += textAdd + " ";
@@ -125,7 +125,8 @@ namespace PumpkinGhost {
         }
         
         public void AddScore(int player, float pumpkinSize){
-            playerScores[player - 1] += (int)(pumpkinSize * 4.0F) - 3;
+            print(pumpkinSize);
+            playerScores[player - 1] += (int) (pumpkinSize * 4.0f) - 3;
             Debug.Log(playerScores[player - 1]);
         }
 

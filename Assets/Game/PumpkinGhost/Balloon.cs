@@ -22,6 +22,7 @@ namespace PumpkinGhost {
 
         private GameObject manager;
 
+
         [SerializeField] private AudioClip sound_balloonPop;
         private AudioSource _audio;
 
@@ -83,7 +84,7 @@ namespace PumpkinGhost {
                 if (pPos.x >= 16 || pPos.x <= -16 || pPos.z >= 15 || pPos.z <= -16.5){
                     penalty += Time.deltaTime;
                     if (penalty >= 2.0F){
-                        manager.GetComponent<PumpkinGhostGameManager>().AddScore(owner.GetComponent<PumpkinGhostPawn>().get_number(), 0.0F);
+                        manager.GetComponent<PumpkinGhostGameManager>().AddScore(owner.GetComponent<PumpkinGhostPawn>().get_number(), 0.0f);
                         killable = -1.0F;
                         penalty = 0.0F;
                         _audio.PlayOneShot(sound_balloonPop);
@@ -102,11 +103,11 @@ namespace PumpkinGhost {
             //Quaternion.RotateTowards(transform.rotation, target.rotation, step);
         }
 
-        void OnTriggerEnter(Collider other)
+        public void PumpkinHitBalloon(int playerNum, float hitPumpkinSize)
         {
-            if (other.CompareTag("MainCamera") && killable >= 1.0F)
+            if (killable >= 1.0F)
             {
-                manager.GetComponent<PumpkinGhostGameManager>().AddScore(other.GetComponent<ThrownPumpkin>().playerNum, other.transform.localScale.y);
+                manager.GetComponent<PumpkinGhostGameManager>().AddScore(playerNum, hitPumpkinSize);
                 killable = -1.0F;
                 _audio.PlayOneShot(sound_balloonPop);
             }
