@@ -14,11 +14,16 @@ public class GrowingPumpkin : MonoBehaviour
 
     public GameObject pumpkinBody;
     private Renderer _pumpkinBodyRenderer;
+    private float growRateModifier = 0;
 
     // Start is called before the first frame update
     void Start()
     {
         _pumpkinBodyRenderer = pumpkinBody.GetComponent<Renderer>();
+        if (growRateModifier == 0)
+        {
+            growRateModifier = Random.Range(-0.04f, 0.04f);
+        }
     }
 
     // Update is called once per frame
@@ -26,7 +31,7 @@ public class GrowingPumpkin : MonoBehaviour
     {
         if (size < maxSize){
             // Increase size if applicable
-            size += growRate * Time.deltaTime;
+            size += (growRate + growRateModifier) * Time.deltaTime;
 
             // Set color based on size
             if (size < minSize)
