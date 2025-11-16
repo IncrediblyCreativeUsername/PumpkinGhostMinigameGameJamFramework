@@ -2094,7 +2094,7 @@ MonoBehaviour:
   playerIndex: -1
   playerNum: 4
   balloon: {fileID: 2049984653}
-  speed: 1.1
+  speed: 0.9
   gravity: -80
   friction: 0.9
   sound_pumpkinPickup: {fileID: 8300000, guid: 98ace3412697747bcae2cf5825b6f80c, type: 3}
@@ -2650,7 +2650,7 @@ MonoBehaviour:
   playerIndex: -1
   playerNum: 2
   balloon: {fileID: 2064768529}
-  speed: 1.1
+  speed: 0.9
   gravity: -80
   friction: 0.9
   sound_pumpkinPickup: {fileID: 8300000, guid: 98ace3412697747bcae2cf5825b6f80c, type: 3}
@@ -4373,7 +4373,7 @@ MonoBehaviour:
   playerIndex: -1
   playerNum: 1
   balloon: {fileID: 1965814133}
-  speed: 1.1
+  speed: 0.9
   gravity: -80
   friction: 0.9
   sound_pumpkinPickup: {fileID: 8300000, guid: 98ace3412697747bcae2cf5825b6f80c, type: 3}
@@ -7891,7 +7891,7 @@ MonoBehaviour:
   playerIndex: -1
   playerNum: 3
   balloon: {fileID: 1627077774}
-  speed: 1.1
+  speed: 0.9
   gravity: -80
   friction: 0.9
   sound_pumpkinPickup: {fileID: 8300000, guid: 98ace3412697747bcae2cf5825b6f80c, type: 3}
