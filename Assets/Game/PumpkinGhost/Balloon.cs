@@ -19,12 +19,15 @@ namespace PumpkinGhost {
 
         private float killable = 1.0F;
 
+        private GameObject manager;
+
         [SerializeField] private AudioClip sound_balloonPop;
         private AudioSource _audio;
 
         // Start is called before the first frame update
         void Start()
         {
+            manager = GameObject.Find("PumpkinGhostManager");
             prevY = owner.transform.rotation.eulerAngles.y;
             //trailPos = owner.transform.position + (owner.transform.rotation * new Vector3(0,0,-1.8F));
 
@@ -86,6 +89,7 @@ namespace PumpkinGhost {
         {
             if (other.CompareTag("MainCamera") && killable >= 1.0F)
             {
+                manager.GetComponent<PumpkinGhostGameManager>().AddScore(other.GetComponent<ThrownPumpkin>().playerNum);
                 killable = -1.0F;
                 _audio.PlayOneShot(sound_balloonPop);
             }
