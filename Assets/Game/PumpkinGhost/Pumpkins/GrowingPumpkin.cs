@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Game.MinigameFramework.Scripts.Framework.PlayerInfo;
 using UnityEngine;
 using UnityEngine.UIElements;
 using PumpkinGhost;
@@ -12,6 +13,8 @@ public class GrowingPumpkin : MonoBehaviour
     public float growRate;
     public float size = 1.0f;
 
+    public int numP = 0;
+
     public GameObject pumpkinBody;
     private Renderer _pumpkinBodyRenderer;
     private float growRateModifier = 0;
@@ -23,6 +26,10 @@ public class GrowingPumpkin : MonoBehaviour
         if (growRateModifier == 0)
         {
             growRateModifier = Random.Range(-0.04f, 0.04f);
+        }
+        if (numP > PlayerManager.GetNumPlayers()) {
+            gameObject.SetActive(false);
+            Destroy(this);
         }
     }
 
