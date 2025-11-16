@@ -30,6 +30,7 @@ namespace PumpkinGhost {
         
         //SOUND
         [SerializeField] private AudioClip sound_music;
+        [SerializeField] private AudioClip sound_intro;
         private AudioSource _audio;
 
         private int numPlayers;
@@ -45,10 +46,11 @@ namespace PumpkinGhost {
 
         IEnumerator GameTimer() {
             // Intro Animation
+            _audio.PlayOneShot(sound_intro);
             PumpkinGhostPawn.isPawnInputEnabled = false;
-            readyText.SetActive(true);
+            //readyText.SetActive(true);
             yield return new WaitForSeconds(1);
-            readyText.SetActive(false);
+            //readyText.SetActive(false);
             PumpkinGhostPawn.isPawnInputEnabled = true;
             _audio.PlayOneShot(sound_music);
             // Timer
