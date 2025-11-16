@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4094379704638652367}
   m_Layer: 10
   m_Name: Growing Pumpkin
-  m_TagString: EditorOnly
+  m_TagString: Finish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 6900938502361092538}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.852217, y: 0.04432106, z: -8.567711}
+  m_LocalPosition: {x: -6.617861, y: 0.36999995, z: 6.45228}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -71,6 +71,7 @@ MonoBehaviour:
   minSize: 1
   growRate: 0.12
   size: 0.6
+  numP: 0
   pumpkinBody: {fileID: 1534219813756110660}
 --- !u!1001 &2620690102377113731
 PrefabInstance:

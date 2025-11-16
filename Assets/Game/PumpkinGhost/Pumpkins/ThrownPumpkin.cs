@@ -52,7 +52,7 @@ public class ThrownPumpkin : MonoBehaviour
 
             StartCoroutine(DestroySelf());
         }
-        else if (other.gameObject.CompareTag("EditorOnly") || other.gameObject.CompareTag("MainCamera"))
+        else if (other.gameObject.CompareTag("Finish") || other.gameObject.CompareTag("MainCamera"))
         {
             // if it is a held pumpkin
             if (other.gameObject && other.gameObject.transform && other.gameObject.transform.parent && other.gameObject.transform.parent.CompareTag("Player")) {
