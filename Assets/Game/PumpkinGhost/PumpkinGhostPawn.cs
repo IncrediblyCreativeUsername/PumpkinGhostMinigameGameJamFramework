@@ -13,7 +13,7 @@ namespace PumpkinGhost {
         [SerializeField] public int playerNum;
 
         [SerializeField] private GameObject balloon;
-        [SerializeField] private float speed = 0.25f;
+        [SerializeField] private float speed = 0.45f;
         [SerializeField] private float gravity = -80f;
         [SerializeField] private float friction = 0.98f;
         [SerializeField] private AudioClip sound_pumpkinPickup;
@@ -68,7 +68,7 @@ namespace PumpkinGhost {
             }
 
             // A button
-            if (context.action.name == PawnAction.ButtonA)
+            if (context.action.name == PawnAction.ButtonA || context.action.name == PawnAction.ButtonB)
             {
                 // Throwing
                 if (pumpkinSize > 0)
