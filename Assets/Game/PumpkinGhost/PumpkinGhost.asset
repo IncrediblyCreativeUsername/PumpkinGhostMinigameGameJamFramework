@@ -12,14 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b65074faa8a836848ae4203c738fad3b, type: 3}
   m_Name: PumpkinGhost
   m_EditorClassIdentifier: 
-  minigameName: PumpkinGhost
+  minigameName: Ghoulish Gourds
   thumbnail: {fileID: 21300000, guid: a0fba38ba2d77451f84e461a3188b93c, type: 3}
   scene:
     m_SceneAsset: {fileID: 102900000, guid: 06a8e04e190ce4636b44276826e060e1, type: 3}
     m_SceneName: PumpkinGhost
   minimumPlayers: 1
-  description: Knock the other players off of the shrinking iceberg. Roll around
-    to increase in size. Be the last player to survive.
-  controls: <sprite name="XBOX_LEFT_STICK"> - Roll
+  description: Pick up pumpkins and throw them at the other players' balloons! The
+    bigger the pumpkin, the more points you'll get!
+  controls: '<sprite name="XBOX_LEFT_STICK"> - Move
+
+    <sprite name="XBOX_A"> -
+    Pick up/throw pumpkin'
   credits: Created by Jay Ignatowski
   attributions: 
