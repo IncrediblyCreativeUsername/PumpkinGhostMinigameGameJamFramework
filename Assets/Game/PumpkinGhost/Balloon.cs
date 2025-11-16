@@ -18,6 +18,7 @@ namespace PumpkinGhost {
         private float angleLimit = 150.0F;
 
         private float killable = 1.0F;
+        private float penalty = 0.0F;
 
         private GameObject manager;
 
@@ -70,12 +71,28 @@ namespace PumpkinGhost {
             tiltY += vY * Time.deltaTime;
             //tiltY = Vector3.Angle(goalPos - owner.transform.position, trailPos - owner.transform.position);
 
-            transform.rotation = Quaternion.Euler(tiltX,tiltY,0);
+            transform.rotation = Quaternion.Euler(tiltX + Mathf.Sin(penalty * 48.0F) * 14.0F,tiltY,0);
 
             if (killable < 1.0F){
                 killable += 2.0F * Time.deltaTime;
                 killable = Mathf.Min(killable, 1.0F);
                 transform.localScale = new Vector3(1,1,1) * Mathf.Max(killable,0.0F);
+            }
+            else{
+                Vector3 pPos = goalPos + (owner.transform.rotation * new Vector3(0,0,-0.55F));
+                if (pPos.x >= 16 || pPos.x <= -16 || pPos.z >= 15 || pPos.z <= -16.5){
+                    penalty += Time.deltaTime;
+                    if (penalty >= 2.0F){
+                        manager.GetComponent<PumpkinGhostGameManager>().AddScore(owner.GetComponent<PumpkinGhostPawn>().get_number(), 0.0F);
+                        killable = -1.0F;
+                        penalty = 0.0F;
+                        _audio.PlayOneShot(sound_balloonPop);
+                    }
+                }
+                else{
+                    penalty = 0.0F;
+                }
+                transform.localScale = new Vector3(1.0F + penalty,1.0F + penalty,1.0F + penalty);
             }
 
             prevY = owner.transform.rotation.eulerAngles.y;

@@ -50,6 +50,10 @@ namespace PumpkinGhost {
 
            
         }
+
+        public int get_number(){
+            return playerNum;
+        }
         
         // Handle input
         protected override void OnActionPressed(InputAction.CallbackContext context) {
