@@ -19,7 +19,6 @@ public class ThrownPumpkin : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log(playerNum);
         GetComponent<Rigidbody>().AddForce(transform.forward * speed, ForceMode.Force);
         _audio = GetComponent<AudioSource>();
     }
@@ -36,7 +35,7 @@ public class ThrownPumpkin : MonoBehaviour
         if (other.gameObject.CompareTag("Respawn"))
         {
             // Place 1-3 new pumpkins on the ground
-            int numPumpkins = Random.Range(1, 3);
+            int numPumpkins = (int)Mathf.Ceil(Random.Range(2, 5) / 2);
             for (int i = 0; i < numPumpkins; i++)
             {
                 // Places a pumpkin
