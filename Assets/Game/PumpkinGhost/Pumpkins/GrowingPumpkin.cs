@@ -52,6 +52,25 @@ public class GrowingPumpkin : MonoBehaviour
 
             // Set scale to factor by size
             transform.localScale = new Vector3(size, size, size);
+            
+            // Spawn back if outside of map.
+            if (transform.position.x < -16) 
+            {
+                transform.position += Vector3.right * Random.Range(1,5);
+            }
+            else if (transform.position.x > 16) 
+            {
+                transform.position += Vector3.left * Random.Range(1,5);
+            }
+
+            if (transform.position.z < -16) 
+            {
+                transform.position += Vector3.forward * Random.Range(1,5);
+            }
+            else if (transform.position.z > 16) 
+            {
+                transform.position += Vector3.back * Random.Range(1,5);
+            }
         }
     }
 
