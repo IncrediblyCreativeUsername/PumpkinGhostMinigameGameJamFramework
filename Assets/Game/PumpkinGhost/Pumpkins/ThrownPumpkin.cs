@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
+using PumpkinGhost;
 using UnityEngine;
 
 public class ThrownPumpkin : MonoBehaviour
@@ -49,6 +50,11 @@ public class ThrownPumpkin : MonoBehaviour
         }
         else if (other.gameObject.CompareTag("EditorOnly") || other.gameObject.CompareTag("MainCamera"))
         {
+            // if it is a held pumpkin
+            if (other.gameObject.transform.parent.CompareTag("Player")) {
+                other.gameObject.transform.parent.GetComponent<PumpkinGhostPawn>().BreakHeldPumpkin();
+            }
+
             pumpkinRespawn.transform.position = transform.position;
             Instantiate(pumpkinRespawn);
             

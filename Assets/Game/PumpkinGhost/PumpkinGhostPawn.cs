@@ -29,6 +29,9 @@ namespace PumpkinGhost {
         public GameObject thrownPumpkin;
         public float pumpkinSize = 0.0f;
 
+        public GameObject pumpkinRespawn;
+        public GameObject particles;
+
         // The pumpkin which this player can pickup (if any)
         public GrowingPumpkin pumpkinPickup = null;
 
@@ -113,6 +116,17 @@ namespace PumpkinGhost {
             }
 
             transform.eulerAngles = new Vector3(0, Mathf.LerpAngle(transform.eulerAngles.y, rotation, 0.1f), 0);
+        }
+
+        public void BreakHeldPumpkin() {
+            particles.transform.position = transform.position + ((0.45f + pumpkinSize) * transform.forward);
+            Instantiate(particles);
+
+            pumpkinRespawn.transform.position = transform.position + ((0.45f + pumpkinSize) * transform.forward);
+            Instantiate(pumpkinRespawn);
+            
+            pumpkin.SetActive(false);
+            pumpkinSize = 0.0f;
         }
 
         public static explicit operator PumpkinGhostPawn(GameObject v)
