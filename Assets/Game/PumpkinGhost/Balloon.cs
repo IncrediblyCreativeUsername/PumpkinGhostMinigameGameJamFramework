@@ -108,6 +108,7 @@ namespace PumpkinGhost {
             if (killable >= 1.0F)
             {
                 manager.GetComponent<PumpkinGhostGameManager>().AddScore(playerNum, hitPumpkinSize);
+                manager.GetComponent<PumpkinGhostGameManager>().AddScore(owner.GetComponent<PumpkinGhostPawn>().playerNum, 0.5f);
                 killable = -1.0F;
                 _audio.PlayOneShot(sound_balloonPop);
             }

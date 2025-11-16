@@ -10,7 +10,7 @@ using UnityEngine.InputSystem;
 namespace PumpkinGhost {
     [RequireComponent(typeof(Rigidbody))]
     public class PumpkinGhostPawn : Pawn {
-        [SerializeField] private int playerNum;
+        [SerializeField] public int playerNum;
 
         [SerializeField] private GameObject balloon;
         [SerializeField] private float speed = 0.25f;
