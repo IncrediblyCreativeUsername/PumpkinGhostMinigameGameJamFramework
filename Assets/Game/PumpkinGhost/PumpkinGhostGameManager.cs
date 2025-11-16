@@ -37,10 +37,9 @@ namespace PumpkinGhost {
             PumpkinGhostPawn.isPawnInputEnabled = true;
             _audio.PlayOneShot(sound_music);
             // Timer
-            while (timer < duration) {
-                timer += Time.deltaTime;
-                yield return null;
-            }
+            
+            yield return new WaitForSeconds(68);
+
             StartCoroutine(EndMinigame());
         }
 
