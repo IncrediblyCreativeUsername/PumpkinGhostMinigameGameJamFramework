@@ -80,7 +80,7 @@ namespace PumpkinGhost {
                 else
                 {
                     // Pickup code
-                    if (pumpkinPickup != null && Vector3.Distance(pumpkinPickup.transform.position, transform.position) < 3)
+                    if (pumpkinPickup != null)
                     {
                         _audio.PlayOneShot(sound_pumpkinPickup);
                         pumpkinSize = pumpkinPickup.GetSize();
