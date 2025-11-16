@@ -73,6 +73,7 @@ namespace PumpkinGhost {
                     thrownPumpkin.transform.position = transform.position + ((0.45f + pumpkinSize) * transform.forward);
                     thrownPumpkin.transform.rotation = transform.rotation;
                     thrownPumpkin.transform.localScale = new Vector3(pumpkinSize, pumpkinSize, pumpkinSize);
+                    thrownPumpkin.GetComponent<ThrownPumpkin>().playerNum = playerNum;
                     Instantiate(thrownPumpkin);
 
                     pumpkinSize = 0.0f;
