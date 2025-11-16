@@ -10,6 +10,7 @@ namespace PumpkinGhost {
         // TIME VARIABLES
         [Header("Time")]
         public float duration = 20;
+        private float gameTime = 66.5f;
         [HideInInspector] public float timer = 0;
         // SCORING VARIABLES
         private MinigameManager.Ranking _ranking = new();
@@ -17,6 +18,9 @@ namespace PumpkinGhost {
         // UI VARIABLES
         [Header("UI")]
         [SerializeField] private GameObject readyText;
+        [SerializeField] private GameObject timerText;
+        [SerializeField] private GameObject timerTextDraw;
+        [SerializeField] private GameObject timerTextOutline;
         
         //SOUND
         [SerializeField] private AudioClip sound_music;
@@ -37,8 +41,9 @@ namespace PumpkinGhost {
             PumpkinGhostPawn.isPawnInputEnabled = true;
             _audio.PlayOneShot(sound_music);
             // Timer
-            
-            yield return new WaitForSeconds(68);
+            timer = gameTime;
+            timerText.SetActive(true);
+            yield return new WaitForSeconds((int)gameTime);
 
             StartCoroutine(EndMinigame());
         }
@@ -67,6 +72,15 @@ namespace PumpkinGhost {
         private void Update()
         {
             _audio.pitch = Time.timeScale;
+            if (timerText.activeSelf) 
+            {
+                timer -= Time.deltaTime;
+                timerText.SetActive(true);
+                if (timer >= 0) {
+                    timerTextDraw.GetComponent<TextMeshProUGUI>().text = ((int) timer).ToString();
+                    timerTextOutline.GetComponent<TextMeshProUGUI>().text = ((int) timer).ToString();
+                }
+            }
         }
         
         public void AddScore(int player, float pumpkinSize){
