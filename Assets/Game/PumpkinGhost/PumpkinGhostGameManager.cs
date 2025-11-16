@@ -89,7 +89,7 @@ namespace PumpkinGhost {
         }
 
         private void CalculateScores() {
-            
+            _ranking.DetermineRankingFromScores(playerScores);
         }
 
         IEnumerator EndMinigame() {
