@@ -7741,7 +7741,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7533487281128966400, guid: cce1261ee3ecd47769508440a06fe914, type: 3}
       propertyPath: m_TagString
-      value: EditorOnly
+      value: Finish
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9034,7 +9034,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7533487281128966400, guid: cce1261ee3ecd47769508440a06fe914, type: 3}
       propertyPath: m_TagString
-      value: EditorOnly
+      value: Finish
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
