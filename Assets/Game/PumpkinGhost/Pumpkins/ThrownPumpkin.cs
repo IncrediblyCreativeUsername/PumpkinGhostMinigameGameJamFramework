@@ -11,10 +11,16 @@ public class ThrownPumpkin : MonoBehaviour
     public int playerNum;
     public GameObject pumpkinRespawn;
 
+
+    //Sound Effects:
+    [SerializeField] private AudioClip sound_pumpkinHit;
+    private AudioSource _audio;
+
     // Start is called before the first frame update
     void Start()
     {
         GetComponent<Rigidbody>().AddForce(transform.forward * speed, ForceMode.Force);
+        _audio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -37,15 +43,32 @@ public class ThrownPumpkin : MonoBehaviour
                 Instantiate(pumpkinRespawn);
             }
 
-            Destroy(this);
-            gameObject.SetActive(false);
+            _audio.PlayOneShot(sound_pumpkinHit);
+
+            StartCoroutine(DestroySelf());
         }
         else if (other.gameObject.CompareTag("EditorOnly") || other.gameObject.CompareTag("MainCamera"))
         {
             pumpkinRespawn.transform.position = transform.position;
             Instantiate(pumpkinRespawn);
-            Destroy(this);
-            gameObject.SetActive(false);
+            
+            _audio.PlayOneShot(sound_pumpkinHit);
+            
+            StartCoroutine(DestroySelf());
         }
+
+
+    }
+
+    IEnumerator DestroySelf() {
+            
+        speed = 0;
+        this.transform.localScale = new Vector3(0,0,0);
+        this.GetComponent<Collider>().enabled = false;
+
+        yield return new WaitForSeconds(sound_pumpkinHit.length);
+
+        Destroy(this);
+        gameObject.SetActive(false);
     }
 }
