@@ -35,7 +35,7 @@ public class ThrownPumpkin : MonoBehaviour
         if (other.gameObject.CompareTag("Respawn"))
         {
             // Place 1-3 new pumpkins on the ground
-            int numPumpkins = Random.Range(1, 3);
+            int numPumpkins = Random.Range(1.5f, 3);
             for (int i = 0; i < numPumpkins; i++)
             {
                 // Places a pumpkin

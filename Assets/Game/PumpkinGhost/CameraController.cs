@@ -35,7 +35,7 @@ namespace PumpkinGhost
                 }
             }
 
-            transform.position += (new Vector3(x / Math.Max(count, 1) * 0.8f, 15, z / Math.Max(count, 1) * 0.8f - 15) - transform.position) * Time.deltaTime;
+            transform.position += (new Vector3(x / Math.Max(count, 1) * 0.8f, 15, z / Math.Max(count, 1) * 0.8f - 20) - transform.position) * Time.deltaTime;
         }
     }
 }
